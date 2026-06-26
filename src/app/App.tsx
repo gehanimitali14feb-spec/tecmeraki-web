@@ -5,8 +5,7 @@ import { motion, AnimatePresence } from "motion/react";
 import logoImg   from "../assets/tecmeraki-logo.png";
 import officeImg from "../assets/office.png";
 import oilgas1   from "../assets/oilgas-1.png";
-import oilgas2   from "../assets/oilgas-2.png";
-import oilgas3   from "../assets/oilgas-3.png";
+import oilgas2 from "../imports/Oil&gas_img2.png";
 import oilgas4   from "../assets/oilgas-4.png";
 
 // Chemical
@@ -40,20 +39,31 @@ import cpg2 from "../imports/CPG_img2.png";
 import cpg3 from "../imports/CPG_img3.png";
 
 // DCS
-import DCS from "../imports/DCS.png";
+import DCS1 from "../imports/DCS_img1.png";
+import DCS2 from "../imports/DCS_img2.png";
 
-// IIoT
-import IIOt from "../imports/IIoT.png";
+// IIoT (Fixed line 6 to say IIOt2 and pull from _img2.png)
+import IIOt1 from "../imports/IIOT_img1.png";
+import IIOt2 from "../imports/IIOT_img2.png";
 
 // Electrical
-import Electrical from "../imports/Electrical.png";
-
+import Electrical1 from "../imports/Electrical_img1.png";
+import Electrical2 from "../imports/Electrical_img2.png";
 // AMC
-import AMC from "../imports/AMC.png";
+import AMC1 from "../imports/AMC_img1.png";
+import AMC2 from "../imports/AMC_img2.png";
 
-// Instrument
-import Instrument from "../imports/Instrument.png";
+// Instrument (Just added the .png extension at the end)
+import Instrument1 from "../imports/Instrumentation_img1.png";
+import Instrument2 from "../imports/Instrumentation_img1.png";
 
+//Energy
+import Energy1 from "../imports/Energymonitoring_img1.png";
+import Energy2 from "../imports/Energymonitorin_img2.png";
+
+//Industrial (Fixed the second line to say Industrial2 so it doesn't collide)
+import Industrial1 from "../imports/industrialnetwork_img1.png";
+import Industrial2 from "../imports/industrialnetwork_img2.png";
 
 /* ─── PLEXUS CANVAS ─── */
 export function PlexusCanvas({ color = "0,212,255", alpha = 0.13, count = 55 }: { color?: string; alpha?: number; count?: number }) {
@@ -196,13 +206,90 @@ const CAROUSEL_SLIDES = [
 ];
 
 const SERVICES = [
-  { num: "01", title: "DCS", desc: "Complete turnkey automation solutions from concept to commissioning. DCS systems, energy monitoring, and process optimization.", img: DCS, tags: ["DCS", "Turnkey", "Process Control"] },
-  { num: "02", title: "Energy Monitoring",           desc: "Real-time energy tracking, power quality monitoring, dashboard development, and utility reporting for cost optimization.",                             tags: ["Metering", "Dashboards", "Analytics"],           img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&q=80" },
-  { num: "03", title: "IIoT & Industry 4.0", desc: "Transform your plant into a smart factory with real-time monitoring, cloud-connected platforms, and proactive edge calculations.", img: IIOt, tags: ["IIoT", "Smart Factory"] },
-  { num: "04", title: "Instrumentation Engineering", desc: "Complete engineering for process measurement and control: instrument selection, hook-up designs, and loop configurations.", img: Instrument, tags: ["Engineering", "Measurement"] },
-  { num: "05", title: "Electrical Design", desc: "Custom design of industrial electrical panels, MCC/PCC engineering, and power distribution diagrams conforming to standards.", img: Electrical, tags: ["Electrical", "Panels"] },
-  { num: "06", title: "Industrial Networking",       desc: "Reliable communication infrastructure with Ethernet/IP, Modbus TCP, ProfiNet, Profibus, and OPC-UA protocol expertise.",                               tags: ["Ethernet/IP", "Modbus", "OPC-UA"],               img: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=700&q=80" },
-  { num: "07", title: "AMC & Training", desc: "Annual maintenance contracts with 24/7 support, preventive maintenance schedules, and corporate technical skill training packs.", img: AMC, tags: ["Support", "Training"] }
+  {
+    id: "dcs",
+    label: "DCS, PLC / SCADA",
+    images: [DCS1, DCS2], // Matches your exact DCS imports
+    points: [
+      { title: "Complete Automation", desc: "Boosts production speed instantly." },
+      { title: "Minimized Downtime", desc: "Fast fault identification." },
+      { title: "Consistent Quality", desc: "Eliminates manual operational errors." },
+      { title: "Centralized Control", desc: "One-screen plant management." },
+      { title: "Enhanced Safety", desc: "Automatic accident prevention." }
+    ]
+  },
+  {
+    id: "energy-monitoring",
+    label: "Energy Monitoring",
+    images: [Energy1,Energy2], // Matches your exact Energy section imports
+    points: [
+      { title: "Cost Savings", desc: "Direct utility bill reduction." },
+      { title: "Asset Optimization", desc: "Tracks heavy machinery efficiency." },
+      { title: "Sustainability Goals", desc: "Eliminates energy wastage." },
+      { title: "Penalty Protection", desc: "Avoids electricity board fines." },
+      { title: "Predictive Insights", desc: "Forecasts sudden machine failures." }
+    ]
+  },
+  {
+    id: "iiot",
+    label: "IIoT & Industry 4.0",
+    images: [IIOt1, IIOt2], // Matches your exact IIoT imports
+    points: [
+      { title: "Remote Accessibility", desc: "Live monitoring from anywhere." },
+      { title: "Data-Driven Decisions", desc: "Real-time operational analytics." },
+      { title: "Smart Alerts", desc: "Prevents sudden breakdowns." },
+      { title: "Improved Efficiency", desc: "Maximizes total plant output." },
+      { title: "Legacy Upgrades", desc: "Modernizes older machinery easily." }
+    ]
+  },
+  {
+    id: "instrumentation",
+    label: "Instrumentation Engineering",
+    images: [Instrument1, Instrument2], // Matches your exact Instrument imports
+    points: [
+      { title: "Precision Control", desc: "Perfect process parameter management." },
+      { title: "Zero Wastage", desc: "Reduces raw material rejection." },
+      { title: "Regulatory Compliance", desc: "Meets industrial safety standards." },
+      { title: "Fail-Safe Operations", desc: "Secures high-hazardous lines." },
+      { title: "Seamless Integration", desc: "Flawless instrument-to-PLC communication." }
+    ]
+  },
+  {
+    id: "electrical",
+    label: "Electrical Design",
+    images: [Electrical1, Electrical2], // Matches your exact Electrical imports
+    points: [
+      { title: "Risk-Free Infrastructure", desc: "Eliminates short-circuit hazards." },
+      { title: "Optimized Procurement", desc: "Saves over-engineering costs." },
+      { title: "Quality Improvement", desc: "Protects sensitive electronic devices." },
+      { title: "Future Expandability", desc: "Hassle-free panel scaling." },
+      { title: "Clear Documentation", desc: "Easy future troubleshooting." }
+    ]
+  },
+  {
+    id: "industrial-networking",
+    label: "Industrial Networking",
+    images: [Industrial1, Industrial2], // Matches your exact Industrial imports
+    points: [
+      { title: "Uninterrupted Communication", desc: "Continuous high-speed data flow." },
+      { title: "Cyber Security", desc: "Protects critical operational data." },
+      { title: "Zero Packet Loss", desc: "Flawless signal transmission." },
+      { title: "Easy Scaling", desc: "Simple network expansion." },
+      { title: "Rapid Fault Location", desc: "Instantly pinpoints offline nodes." }
+    ]
+  },
+  {
+    id: "amc-training",
+    label: "AMC & Training",
+    images: [AMC1, AMC2], // Matches your exact AMC imports
+    points: [
+      { title: "Peace of Mind", desc: "Smooth, surprise-free operations." },
+      { title: "Extended Equipment Life", desc: "Prevents early hardware wear-and-tear." },
+      { title: "Self-Reliant Team", desc: "Independent internal troubleshooting." },
+      { title: "Priority Support", desc: "Immediate emergency assistance." },
+      { title: "Reduced Errors", desc: "Avoids accidental operational downtime." }
+    ]
+  }
 ];
 
 const INDUSTRIES = [
@@ -220,7 +307,7 @@ const INDUSTRIES = [
   },
   {
     id: "oilgas",    label: "Oil & Gas",
-    images: [oilgas1, oilgas2, oilgas3, oilgas4],
+    images: [oilgas1, oilgas2, oilgas4],
     challenges:     ["Remote site monitoring", "Pipeline integrity & leak detection", "Hazardous area safety requirements"],
     valueDelivered: ["Wellhead & tank farm DCS", "Pipeline monitoring systems", "ATEX-rated control panels", "Enhanced Operational Safety", "Reduced Downtime", "Real-Time Asset Visibility"],
   },
@@ -254,11 +341,12 @@ const INDUSTRIES = [
 export default function App() {
   const [scrolled,        setScrolled]        = useState(false);
   const [menuOpen,        setMenuOpen]        = useState(false);
-  const [slide,           setSlide]           = useState(0);
-  const [activeService,   setActiveService]   = useState<number | null>(null);
+  const [activeService, setActiveService] = useState(0);
+  const [serviceSlide, setServiceSlide] = useState(0);
   const [activeIndustry,  setActiveIndustry]  = useState(0);
-  const [industrySlide,   setIndustrySlide]   = useState(0);
-  const [formData,        setFormData]        = useState({ name: "", email: "", company: "", service: "", message: "" });
+  const [industrySlide, setIndustrySlide] = useState(0);
+ const [slide, setSlide] = useState(0);
+const [formData, setFormData] = useState({ name: "", email: "", company: "", service: "", message: "" });
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
@@ -271,7 +359,14 @@ export default function App() {
     const t = setInterval(() => setSlide(s => (s + 1) % CAROUSEL_SLIDES.length), 5000);
     return () => clearInterval(t);
   }, []);
-
+useEffect(() => {
+     const timer = setInterval(() => {
+       if (SERVICES[activeService]?.images?.length > 1) {
+         setServiceSlide((prev) => (prev + 1) % SERVICES[activeService].images.length);
+     }
+    }, 3500);
+   return () => clearInterval(timer);
+  }, [activeService]);
   useEffect(() => { setIndustrySlide(0); }, [activeIndustry]);
 
   useEffect(() => {
@@ -401,18 +496,7 @@ export default function App() {
               </p>
               
               {/* BUTTONS: Reduced spacing and small text profile size to stop stacking/overlap */}
-              <div className="flex flex-row items-center gap-3 sm:gap-4 w-full sm:w-auto">
-                <a href="#services" onClick={(e) => { e.preventDefault(); handleNavClick("#services"); }}
-                  className="inline-flex items-center justify-center gap-1.5 px-5 py-2.5 rounded-full text-white font-bold text-xs sm:text-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5"
-                  style={{ background: "linear-gradient(135deg,#00d4ff,#7c3aed)", fontFamily: "'Plus Jakarta Sans',sans-serif" }}>
-                  Explore Services →
-                </a>
-                <a href="#contact" onClick={(e) => { e.preventDefault(); handleNavClick("#contact"); }}
-                  className="inline-flex items-center justify-center gap-1.5 px-5 py-2.5 rounded-full font-bold text-xs sm:text-sm border border-white/50 text-white hover:bg-white/10 transition-all duration-300"
-                  style={{ fontFamily: "'Plus Jakarta Sans',sans-serif" }}>
-                  Get In Touch
-                </a>
-              </div>
+              
 
             </div>
           </div>
@@ -449,52 +533,55 @@ export default function App() {
       </section>
 
       {/* ── ABOUT ── */}
-      <section id="about" className="py-12 md:py-24 bg-white relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: "linear-gradient(rgba(100,116,139,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(100,116,139,0.06) 1px,transparent 1px)", backgroundSize: "48px 48px" }} />
-        <SoftShapes variant="a" />
-        <PlexusCanvas color="0,180,220" alpha={0.08} count={44} />
-        <div className="relative z-10 max-w-6xl mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center mb-12 md:mb-16">
-            <FadeIn direction="left">
-              <div>
-                <div className="text-xs font-bold tracking-widest text-cyan-600 uppercase mb-3">About Us</div>
-                <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 md:mb-6 leading-tight" style={{ fontFamily: "'Plus Jakarta Sans',sans-serif" }}>
-                  Engineering the Future of <span style={{ color: "#00b8d9" }}>Industry</span>
-                </h2>
-                <p className="text-gray-500 text-sm md:text-base leading-relaxed mb-4">
-                  Founded in 2021 by an industrial automation veteran with over two decades of experience, TecMeraki Systems LLP has established itself as a trusted partner for Industrial Automation and digital transformation across industries. Headquartered in Vadodara, Gujarat, the company began operations with a strong focus on industrial automation, IIoT solutions, and the export of engineered goods, steadily expanding its capabilities to meet the evolving needs of global markets.
-                </p>
-                <p className="text-gray-500 text-sm md:text-base leading-relaxed mb-4">
-                  At TecMeraki, we specialize in delivering end‑to‑end automation and control systems, integrating IT and OT networks, and providing precision electrical and instrumentation engineering services. Our expertise extends to smart manufacturing, predictive analytics, plant modernization, and turnkey project execution, ensuring that our clients achieve efficiency, safety, and sustainability in their operations.
-                </p>
-                <p className="text-gray-500 text-sm md:text-base leading-relaxed">
-                  With a blend of technical expertise, visionary thinking, and a passion for soulful innovation, TecMeraki Systems LLP continues to deliver solutions that not only transform businesses but also contribute to a smarter, more sustainable industrial future.
-                </p>
-              </div>
-            </FadeIn>
-            <FadeIn direction="right" delay={0.1}>
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl h-64 sm:h-96 md:h-[480px] mt-4 md:mt-0">
-                <img src={officeImg} alt="TecMeraki Office" className="w-full h-full object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-              </div>
-            </FadeIn>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {[
-              { icon: "⚙️", title: "Our Mission", desc: "Empower industries with intelligent automation and digital technologies to drive operational excellence, sustainable growth, and competitive advantage." },
-              { icon: "🎯", title: "Our Vision",  desc: "Become a trusted global partner for industrial automation and digital transformation by delivering smart, sustainable, and future-ready solutions." },
-            ].map((mv, i) => (
-              <FadeIn key={mv.title} direction={i === 0 ? "left" : "right"} delay={0.1}>
-                <div className="p-6 md:p-8 rounded-2xl border border-gray-100 bg-white/80 backdrop-blur-sm text-center hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300">
-                  <div className="text-3xl md:text-4xl mb-3 md:mb-4">{mv.icon}</div>
-                  <h3 className="font-bold text-base md:text-lg text-gray-900 mb-2 md:mb-3" style={{ fontFamily: "'Plus Jakarta Sans',sans-serif" }}>{mv.title}</h3>
-                  <p className="text-gray-500 text-xs md:text-sm leading-relaxed">{mv.desc}</p>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
+    <section id="about" className="py-12 md:py-24 bg-white relative overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: "linear-gradient(rgba(100,116,139,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(100,116,139,0.06) 1px,transparent 1px)", backgroundSize: "48px 48px" }} />
+      <SoftShapes variant="a" />
+      <PlexusCanvas color="0,180,220" alpha={0.08} count={44} />
+      
+      <div className="relative z-10 max-w-6xl mx-auto px-4 md:px-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center mb-12 md:mb-16">
+          <FadeIn direction="left">
+            <div>
+              <div className="text-xs font-bold tracking-widest text-cyan-600 uppercase mb-3">About Us</div>
+              <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 md:mb-6 leading-tight" style={{ fontFamily: "'Plus Jakarta Sans',sans-serif" }}>
+                Engineer the Future of <span style={{ color: "#00b8d9" }}>Industry</span>
+              </h2>
+              <p className="text-gray-500 text-sm md:text-base leading-relaxed mb-4">
+                Founded in 2021 by an industrial automation veteran with over two decades of experience, TecMeraki Systems LLP has established itself as a trusted partner for Industrial Automation and digital transformation across industries. Headquartered in Vadodara, Gujarat, the company began operations with a strong focus on industrial automation, IIoT solutions, and the export of engineered goods, steadily expanding its capabilities to meet the evolving needs of global markets.
+              </p>
+              <p className="text-gray-500 text-sm md:text-base leading-relaxed mb-4">
+                At TecMeraki, we specialize in delivering end‑to‑end automation and control systems, integrating IT and OT networks, and providing precision electrical and instrumentation engineering services. Our expertise extends to smart manufacturing, predictive analytics, plant modernization, and turnkey project execution, ensuring that our clients achieve efficiency, safety, and sustainability in their operations.Our values form the foundation of everything we do. We are committed to excellence by maintaining the highest standards in engineering and execution. We embrace innovation, continuously adopting new technologies to empower industries with scalable solutions. We build trust through transparency and long‑term partnerships, and we uphold sustainability by designing systems that support both operational efficiency and environmental responsibility.
+              </p>
+              <p className="text-gray-500 text-sm md:text-base leading-relaxed">
+                With a blend of technical expertise, visionary thinking, and a passion for soulful innovation, TecMeraki Systems LLP continues to deliver solutions that not only transform businesses but also contribute to a smarter, more sustainable industrial future.
+              </p>
+            </div>
+          </FadeIn>
+          
+          <FadeIn direction="right" delay={0.1}>
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl h-64 sm:h-96 md:h-[480px] mt-4 md:mt-0">
+              <img src={officeImg} alt="TecMeraki Office" className="w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+            </div>
+          </FadeIn>
         </div>
-      </section>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {[
+            { icon: "⚙️", title: "Our Mission", desc: "Empower industries with intelligent automation and digital technologies to drive operational excellence, sustainable growth, and competitive advantage." },
+            { icon: "🎯", title: "Our Vision",  desc: "Become a trusted global partner for industrial automation and digital transformation by delivering smart, sustainable, and future-ready solutions." },
+          ].map((mv, i) => (
+            <FadeIn key={mv.title} direction={i === 0 ? "left" : "right"} delay={0.1}>
+              <div className="p-6 md:p-8 rounded-2xl border border-gray-100 bg-white/80 backdrop-blur-sm text-center hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300">
+                <div className="text-3xl md:text-4xl mb-3 md:mb-4">{mv.icon}</div>
+                <h3 className="font-bold text-base md:text-lg text-gray-900 mb-2 md:mb-3" style={{ fontFamily: "'Plus Jakarta Sans',sans-serif" }}>{mv.title}</h3>
+                <p className="text-gray-500 text-xs md:text-sm leading-relaxed">{mv.desc}</p>
+              </div>
+            </FadeIn>
+          ))}
+        </div>
+      </div>
+    </section>
 
       {/* ── INDUSTRIES WE SERVE ── */}
       <section id="industries" className="py-12 md:py-24 bg-white relative overflow-hidden">
@@ -598,10 +685,11 @@ export default function App() {
         </div>
       </section>
 
-      {/* ── SERVICES — Horizontal Accordion ── */}
+      {/* ── OUR SERVICES ── */}
       <section id="services" className="py-12 md:py-24 relative overflow-hidden" style={{ backgroundColor: "#f8fafc" }}>
         <SoftShapes variant="b" />
         <PlexusCanvas color="0,180,220" alpha={0.08} count={45} />
+        
         <div className="relative z-10 max-w-6xl mx-auto px-4 md:px-6">
           <FadeIn direction="up">
             <div className="text-center mb-10 md:mb-14">
@@ -609,55 +697,113 @@ export default function App() {
               <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 mb-4" style={{ fontFamily: "'Plus Jakarta Sans',sans-serif" }}>
                 Comprehensive <span style={{ color: "#00b8d9" }}>Automation</span> Solutions
               </h2>
-              <p className="text-gray-500 text-sm md:text-base max-w-xl mx-auto">Hover over any service to explore it fully.</p>
+              <p className="text-gray-500 text-sm md:text-base max-w-xl mx-auto">Select a service area to explore our technical capabilities and solutions.</p>
             </div>
           </FadeIn>
-          <FadeIn direction="up" delay={0.15}>
-            <div className="flex flex-col border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
-              {SERVICES.map((s, i) => {
-                const isActive = activeService === i;
-                return (
-                  <motion.div key={s.num} layout
-                    onMouseEnter={() => setActiveService(i)} onMouseLeave={() => setActiveService(null)}
-                    className={`relative overflow-hidden border-b border-gray-100 last:border-b-0 cursor-pointer transition-colors duration-300 bg-white ${!isActive && "hover:bg-slate-50"}`}
-                    animate={{ height: isActive ? "auto" : 64 }}
-                    transition={{ duration: 0.45, ease: [0.25, 0.46, 0.45, 0.94] }}
-                    style={{ minHeight: 64 }}>
-                    {isActive && <div className="absolute left-0 top-0 bottom-0 w-1 rounded-r z-20" style={{ background: "linear-gradient(180deg,#00d4ff,#7c3aed)" }} />}
-                    <div className={`absolute top-0 left-0 right-0 h-16 flex items-center px-4 md:px-6 gap-4 transition-opacity duration-200 ${isActive ? "opacity-0 pointer-events-none" : "opacity-100"}`}>
-                      <span className="text-xs font-bold text-cyan-500 tracking-widest w-8 flex-shrink-0">{s.num}</span>
-                      <div className="w-px h-4 bg-gray-200 flex-shrink-0" />
-                      <span className="text-sm font-semibold text-gray-700 break-words min-w-0 pr-2" style={{ fontFamily: "'Plus Jakarta Sans',sans-serif" }}>{s.title}</span>
-                      <span className="ml-auto text-cyan-400 text-lg font-light flex-shrink-0">+</span>
-                    </div>
-                    <AnimatePresence>
-                      {isActive && (
-                        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.25, delay: 0.15 }}
-                          className="w-full grid grid-cols-1 md:grid-cols-[1fr_380px]">
-                          <div className="flex flex-col justify-center px-6 md:px-8 pt-6 pb-4 md:py-6">
-                            <div className="text-xs font-bold text-cyan-600 tracking-widest mb-1">{s.num}</div>
-                            <h3 className="text-lg md:text-xl font-extrabold text-gray-900 mb-3" style={{ fontFamily: "'Plus Jakarta Sans',sans-serif" }}>{s.title}</h3>
-                            <p className="text-gray-500 text-xs md:text-sm leading-relaxed mb-4 max-w-md">{s.desc}</p>
-                            <div className="flex flex-wrap gap-2">
-                              {s.tags.map(t => <span key={t} className="text-[10px] md:text-xs px-2.5 py-1 rounded-full font-medium bg-cyan-50 text-cyan-700 border border-cyan-200">{t}</span>)}
-                            </div>
-                          </div>
-                          <div className="relative overflow-hidden h-48 md:h-full min-h-[180px] w-full">
-                            <img src={s.img} alt={s.title} className="w-full h-full object-cover scale-105" />
-                            <div className="absolute inset-0 hidden md:block" style={{ background: "linear-gradient(90deg,rgba(255,255,255,0.55) 0%,transparent 50%)" }} />
-                            <div className="absolute top-0 bottom-0 left-0 w-12 hidden md:block" style={{ background: "linear-gradient(90deg,#ffffff,transparent)" }} />
-                          </div>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </motion.div>
-                );
-              })}
+
+          {/* Interactive Navigation Tabs */}
+          <FadeIn direction="up" delay={0.1}>
+            <div className="flex flex-wrap justify-center gap-2 pb-6 md:pb-8 mb-6 md:mb-8 border-b border-slate-200">
+              {SERVICES.map((srv, i) => (
+                <button 
+                  key={srv.id} 
+                  onClick={() => { setActiveService(i); setServiceSlide(0); }}
+                  className={`px-4 md:px-5 py-2 md:py-2.5 rounded-full text-xs md:text-sm font-semibold transition-all duration-300 ${activeService === i ? "text-white shadow-md scale-105" : "bg-transparent text-slate-500 hover:text-slate-700"}`}
+                  style={activeService === i ? { background: "linear-gradient(135deg,#00b8d9,#7c3aed)" } : { border: "1px solid rgba(100,116,139,0.35)" }}
+                >
+                  {srv.label}
+                </button>
+              ))}
             </div>
           </FadeIn>
+
+          {/* Core Interactive Display Board */}
+          <AnimatePresence mode="wait">
+            <motion.div 
+              key={activeService}
+              initial={{ opacity: 0, y: 24 }} 
+              animate={{ opacity: 1, y: 0 }} 
+              exit={{ opacity: 0, y: -16 }}
+              transition={{ duration: 0.45, ease: "easeOut" }}
+              className="grid grid-cols-1 md:grid-cols-4 rounded-2xl overflow-hidden shadow-xl border border-gray-100 bg-white"
+            >
+              
+              {/* LEFT SIDE: Technical Description Column Panel */}
+              <div className="p-6 md:p-8 flex flex-col justify-between md:col-span-2 bg-white">
+                <div>
+                  <div className="flex items-center gap-2 mb-6">
+                    <div className="w-1 h-4 rounded-full flex-shrink-0" style={{ backgroundColor: "#00b8d9" }} />
+                    <div className="text-xs font-bold tracking-widest uppercase" style={{ color: "#00b8d9" }}>Technical Description</div>
+                  </div>
+                  
+                  <ul className="space-y-4">
+                    {SERVICES[activeService].points.map((pt, index) => (
+                      <li key={index} className="flex items-start gap-2.5 text-sm leading-relaxed text-gray-600">
+                        <span className="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: "#00b8d9" }} />
+                        <span className="break-words min-w-0 flex-1">
+                          <strong className="text-gray-900 font-semibold">{pt.title}:</strong> {pt.desc}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              {/* RIGHT SIDE: Image Presentation / Carousel Panel */}
+              <div className="relative overflow-hidden h-64 md:h-auto md:col-span-2 min-h-[260px] md:min-h-[420px]">
+                <AnimatePresence mode="sync">
+                  <motion.img
+                    key={`${activeService}-${serviceSlide}`}
+                    src={SERVICES[activeService].images[serviceSlide] as string}
+                    alt={SERVICES[activeService].label}
+                    initial={{ opacity: 0, scale: 1.05 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.8, ease: "easeInOut" }}
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                </AnimatePresence>
+                
+                <div className="absolute inset-0 bg-gradient-to-l from-transparent to-black/40 pointer-events-none" />
+                
+                <div className="absolute bottom-6 left-6 text-white z-10">
+                  <div className="text-[10px] md:text-xs uppercase tracking-widest opacity-70 mb-1">Domain Architecture</div>
+                  <div className="text-xl md:text-2xl font-extrabold" style={{ fontFamily: "'Plus Jakarta Sans',sans-serif" }}>{SERVICES[activeService].label}</div>
+                </div>
+
+                {/* Slideshow Controls */}
+                {SERVICES[activeService].images.length > 1 && (
+                  <div className="absolute bottom-6 right-5 z-10 flex gap-1.5">
+                    {SERVICES[activeService].images.map((_, di) => (
+                      <button 
+                        key={di} 
+                        onClick={() => setServiceSlide(di)}
+                        className={`rounded-full transition-all duration-300 ${di === serviceSlide ? "w-6 h-2 bg-white" : "w-2 h-2 bg-white/50 hover:bg-white/80"}`} />
+                    ))}
+                  </div>
+                )}
+                {SERVICES[activeService].images.length > 1 && (
+                  <>
+                    <button 
+                      onClick={() => setServiceSlide((s: number) => (s - 1 + SERVICES[activeService].images.length) % SERVICES[activeService].images.length)}
+                      className="absolute left-3 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-black/30 border border-white/20 text-white hover:bg-black/50 transition-all flex items-center justify-center text-base"
+                    >
+                      ‹
+                    </button>
+                    <button 
+                      onClick={() => setServiceSlide((s: number) => (s + 1) % SERVICES[activeService].images.length)}
+                      className="absolute right-3 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-black/30 border border-white/20 text-white hover:bg-black/50 transition-all flex items-center justify-center text-base"
+                    >
+                      ›
+                    </button>
+                  </>
+                )}
+              </div>
+
+            </motion.div>
+          </AnimatePresence>
         </div>
       </section>
-
       {/* ── CONTACT ── */}
       <section id="contact" className="py-12 md:py-24 bg-gray-50 relative overflow-hidden">
         <SoftShapes variant="b" />
