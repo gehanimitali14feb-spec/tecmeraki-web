@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "motion/react";
 import logoImg   from "../assets/tecmeraki-logo.png";
 import officeImg from "../assets/office.png";
 import oilgas1   from "../assets/oilgas-1.png";
-import oilgas2 from "../imports/Oil&gas_img2.png";
+import oilgas2 from "../imports/oil&gas_img2.png";
 import oilgas4   from "../assets/oilgas-4.png";
 
 // Chemical
@@ -23,7 +23,7 @@ import fmcg1 from "../imports/FMCG_img1.png";
 import fmcg2 from "../imports/FMCG_img2.png";
 import fmcg3 from "../imports/FMCG_img3.png";
 
-// Food & Beverage
+// Food & Bevrage
 import food1 from "../imports/Food&Bevrages_img1.png";
 import food2 from "../imports/Food&Bevrages_img2.png";
 import food3 from "../imports/Food&Bevrages_img3.png";
