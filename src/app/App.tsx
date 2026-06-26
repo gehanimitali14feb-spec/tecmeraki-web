@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "motion/react";
 import logoImg   from "../assets/tecmeraki-logo.png";
 import officeImg from "../assets/office.png";
 import oilgas1   from "../assets/oilgas-1.png";
-import oilgas2 from "../imports/oil&gas_img2.png";
+import oilgas2 from "../imports/Oil&gas_img2.png";
 import oilgas4   from "../assets/oilgas-4.png";
 
 // Chemical
