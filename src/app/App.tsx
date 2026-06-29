@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback, useRef } from "react";
-import { motion, AnimatePresence } from "motion/react";
+import { motion, AnimatePresence } from "motion/react"
+
 
 // ─── ASSET IMPORTS ───
 import logoImg   from "../assets/tecmeraki-logo.png";
@@ -19,12 +20,12 @@ import pharma2 from "../imports/Pharma_img2.png";
 import pharma3 from "../imports/Pharma_img3.png";
 
 // FMCG
-import fmcg1 from "../imports/FMCG_img1.png";
+import fmcg1 from "../imports/FMCG_img01.png";
 import fmcg2 from "../imports/FMCG_img2.png";
 import fmcg3 from "../imports/FMCG_img3.png";
 
 // Food & Bevrage
-import food1 from "../imports/Food&Bevrages_img1.png";
+import food1 from "../imports/Food&Bevrages_img01.png";
 import food2 from "../imports/Food&Bevrages_img2.png";
 import food3 from "../imports/Food&Bevrages_img3.png";
 
@@ -47,7 +48,7 @@ import IIOt1 from "../imports/IIOT_img1.png";
 import IIOt2 from "../imports/IIOT_img2.png";
 
 // Electrical
-import Electrical1 from "../imports/Electrical_img1.png";
+import Electrical1 from "../imports/Electrical_img01.png";
 import Electrical2 from "../imports/Electrical_img2.png";
 // AMC
 import AMC1 from "../imports/AMC_img1.png";
@@ -55,7 +56,7 @@ import AMC2 from "../imports/AMC_img2.png";
 
 // Instrument (Just added the .png extension at the end)
 import Instrument1 from "../imports/Instrumentation_img1.png";
-import Instrument2 from "../imports/Instrumentation_img1.png";
+import Instrument2 from "../imports/Instrumentation_img2.png";
 
 //Energy
 import Energy1 from "../imports/Energymonitoring_img1.png";
@@ -63,7 +64,13 @@ import Energy2 from "../imports/Energymonitorin_img2.png";
 
 //Industrial (Fixed the second line to say Industrial2 so it doesn't collide)
 import Industrial1 from "../imports/industrialnetwork_img1.png";
-import Industrial2 from "../imports/industrialnetwork_img2.png";
+import Industrial2 from "../imports/industrialnetwork_02.png";
+
+//Metal & Mining
+import Metal1 from "../assets/Metal_img1.png";
+import Metal2 from "../assets/Metal_img2.png";
+import Metal3 from "../assets/Metal_img3.png";
+
 
 /* ─── PLEXUS CANVAS ─── */
 export function PlexusCanvas({ color = "0,212,255", alpha = 0.13, count = 55 }: { color?: string; alpha?: number; count?: number }) {
@@ -275,7 +282,9 @@ const SERVICES = [
       { title: "Cyber Security", desc: "Protects critical operational data." },
       { title: "Zero Packet Loss", desc: "Flawless signal transmission." },
       { title: "Easy Scaling", desc: "Simple network expansion." },
-      { title: "Rapid Fault Location", desc: "Instantly pinpoints offline nodes." }
+      { title: "Rapid Fault Location", desc: "Instantly pinpoints offline nodes." },
+      { title: "Network Audit", desc: "Improves network stability." },
+      { title: "Cybersecurity Implementation", desc: "Protects against cyber threats." }
     ]
   },
   {
@@ -296,49 +305,81 @@ const INDUSTRIES = [
   {
     id: "chemical",  label: "Chemical",
     images: [chem1, chem2, chem3],
-    challenges:     ["Complex batch process control", "Strict safety & interlock requirements", "Regulatory compliance & traceability"],
+    challenges:     ["Complex batch process control", "Strict safety & interlock requirements", "Regulatory compliance & traceability", "Process variability affecting product quality.", "High operational downtime & production losses."],
     valueDelivered: ["DCS-based batch automation", "Safety instrumented systems (SIS)", "Real-time process reporting", "Cycle Time Reduction", "Improved Product Consistency", "Enhanced Safety Compliance"],
   },
   {
     id: "pharma",    label: "Pharmaceutical",
     images: [pharma1, pharma2, pharma3],
-    challenges:     ["21 CFR Part 11 & GMP compliance", "Manual audit trails & paper records", "Validation & qualification demands"],
+    challenges:     ["21 CFR Part 11 & GMP compliance", "Manual audit trails & paper records", "Validation & qualification demands",  "Limited process traceability.", "High risk of documentation errors."],
     valueDelivered: ["Electronic batch records & audit trails", "DCS migration with e-signatures", "Automated validation documentation", "Regulatory Compliance", "Audit-Ready Operations", "Zero Audit Observations"],
   },
   {
     id: "oilgas",    label: "Oil & Gas",
     images: [oilgas1, oilgas2, oilgas4],
-    challenges:     ["Remote site monitoring", "Pipeline integrity & leak detection", "Hazardous area safety requirements"],
+    challenges:     ["Remote site monitoring", "Pipeline integrity & leak detection", "Hazardous area safety requirements" , "Unplanned equipment downtime.", "Limited real-time asset visibility."],
     valueDelivered: ["Wellhead & tank farm DCS", "Pipeline monitoring systems", "ATEX-rated control panels", "Enhanced Operational Safety", "Reduced Downtime", "Real-Time Asset Visibility"],
   },
   {
     id: "fmcg",      label: "FMCG",
     images: [fmcg1, fmcg2, fmcg3],
-    challenges:     ["Low OEE & high unplanned downtime", "Lack of production visibility", "Manual reporting & slow decision-making"],
+    challenges:     ["Low OEE & high unplanned downtime", "Lack of production visibility", "Manual reporting & slow decision-making","Inefficient production planning & scheduling.", "Limited real-time performance insights."],
     valueDelivered: ["OEE monitoring dashboards", "Digital production tracking systems", "Automated shift & batch reports", "Operational Excellence", "Enhanced Manufacturing Efficiency", "Data-Driven Decision Making"],
   },
   {
     id: "foodbev",   label: "Food & Beverage",
     images: [food1, food2, food3],
-    challenges:     ["Recipe consistency & quality control", "Hygiene & CIP/SIP automation", "Traceability & allergen management"],
+    challenges:     ["Recipe consistency & quality control", "Hygiene & CIP/SIP automation", "Traceability & allergen management",  "Manual batch operations & process variations.", "High product waste & rework due to inconsistencies."],
     valueDelivered: ["Recipe management & batch control", "Automated CIP/SIP sequences", "End-to-end traceability systems", "Consistent Product Quality", "Reduced Waste & Rework", "Improved Compliance & Traceability"],
   },
   {
     id: "power",     label: "Power & Utilities",
     images: [power1, power2, power3],
-    challenges:     ["Energy wastage & peak demand costs", "Manual substation operations", "Limited visibility into consumption"],
+    challenges:     ["Energy wastage & peak demand costs", "Manual substation operations", "Limited visibility into consumption","Inefficient load balancing across electrical networks","Lack of accurate energy usage analysis & forecasting"],
     valueDelivered: ["Substation automation & DCS", "Multi-point energy monitoring systems", "Load management & demand forecasting", "Optimized Resource Utilization", "Reduced Energy Costs", "Real-Time Consumption Visibility"],
   },
   {
     id: "cpg",       label: "CPG",
     images: [cpg1, cpg2, cpg3],
-    challenges:     ["High SKU complexity & changeovers", "Supply chain variability & waste", "Compliance with labeling & safety regulations"],
+    challenges:     ["High SKU complexity & changeovers", "Supply chain variability & waste", "Compliance with labeling & safety regulations","Lack of real-time production visibility.", "Frequent quality defects & product inconsistencies."],
     valueDelivered: ["Automated packaging & filling lines", "Real-time production tracking", "Quality control & vision systems", "Reduced Changeover Time", "Improved Line Efficiency", "End-to-End Traceability"],
   },
+
+  {
+  id: "metal-mining",
+  label: "Metal & Mining",
+  images: [Metal1, Metal2, Metal3],
+  challenges: ["Harsh operating conditions reduce equipment reliability", "Inconsistent material flow impacts production efficiency.","Unexpected equipment failures cause costly downtime.", "High energy consumption increases operating costs.", "Limited real-time process visibility delays decision-making."],
+  valueDelivered: [ "Intelligent process automation improves operational efficiency.", "Real-time monitoring enhances production visibility and control.", "Predictive maintenance minimizes unplanned downtime.", "Optimized operations reduce energy consumption.", "Integrated plant solutions improve productivity and reliability."]
+}
+
 ];
 
 /* ─── MAIN APP COMPONENT ─── */
 export default function App() {
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    const formData = new FormData(e.currentTarget);
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      setIsSubmitted(true);
+      setIsSubmitting(false);
+    } else {
+      alert("Something went wrong. Please try again.");
+      setIsSubmitting(false);
+    }
+  };
   const [scrolled,        setScrolled]        = useState(false);
   const [menuOpen,        setMenuOpen]        = useState(false);
   const [activeService, setActiveService] = useState(0);
@@ -853,25 +894,63 @@ useEffect(() => {
             <FadeIn direction="right" delay={0.1}>
               <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-5 md:p-8 mt-6 md:mt-0">
                 <h3 className="font-bold text-gray-900 mb-6 text-base md:text-lg" style={{ fontFamily: "'Plus Jakarta Sans',sans-serif" }}>Get In Touch</h3>
-                <form className="flex flex-col gap-4" onSubmit={handleFormSubmit}>
-                  {[{ ph: "Your Name", key: "name", type: "text" }, { ph: "Email Address", key: "email", type: "email" }, { ph: "Company Name", key: "company", type: "text" }].map(f => (
-                    <input key={f.key} type={f.type} placeholder={f.ph}
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 text-gray-800 text-sm placeholder-gray-400 focus:outline-none focus:border-cyan-400 focus:bg-white transition-all"
-                      value={(formData as any)[f.key]} onChange={(e) => setFormData({ ...formData, [f.key]: e.target.value })} />
-                  ))}
-                  <select className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 text-gray-600 text-sm focus:outline-none focus:border-cyan-400 focus:bg-white transition-all cursor-pointer"
-                    value={formData.service} onChange={(e) => setFormData({ ...formData, service: e.target.value })}>
-                    <option value="">Select Service</option>
-                    {["DCS", "Energy Monitoring", "IIoT Solutions", "Instrumentation", "Electrical Design", "AMC & Training"].map(s => <option key={s}>{s}</option>)}
-                  </select>
-                  <textarea placeholder="Tell us about your project..." rows={4}
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 text-gray-800 text-sm placeholder-gray-400 focus:outline-none focus:border-cyan-400 focus:bg-white transition-all resize-vertical"
-                    value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} />
-                  <button type="submit" className="w-full py-3.5 rounded-xl text-white font-semibold text-sm md:text-base flex items-center justify-center gap-2 transition-all duration-300 hover:shadow-lg"
-                    style={{ background: "linear-gradient(135deg,#00d4ff,#7c3aed)", fontFamily: "'Plus Jakarta Sans',sans-serif" }}>
-                    Send Message →
-                  </button>
-                </form>
+               {isSubmitted ? (
+  // 🎉 GORGEOUS SUCCESS STATE (Displays instead of the form once sent)
+  <div className="p-8 text-center bg-green-50 rounded-2xl border border-green-200 shadow-sm animate-fade-in">
+    <div className="text-4xl mb-3">✨</div>
+    <h3 className="text-xl font-semibold text-green-900 mb-1">Message Sent Successfully!</h3>
+    <p className="text-green-700 text-sm">Thank you for reaching out. Our team will get back to you shortly.</p>
+  </div>
+) : (
+  // 📝 THE ACTUAL WORKING FORM
+  <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
+    {/* 🔑 YOUR ACCESS KEY IS PLACED SECURELY HERE */}
+    <input type="hidden" name="access_key" value="b86eebda-4311-44a6-a055-a09ee6030514" />
+    
+    {/* Honeypot Spam Protection (Invisible to real users) */}
+    <input type="checkbox" name="botcheck" className="hidden" style={{ display: "none" }} />
+
+    {[{ ph: "Your Name", key: "name", type: "text" }, { ph: "Email Address", key: "email", type: "email" }, { ph: "Company Name", key: "company", type: "text" }].map(f => (
+      <input 
+        key={f.key} 
+        type={f.type} 
+        name={f.key} // 👈 Passes proper structural name attributes dynamically
+        placeholder={f.ph}
+        className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 text-gray-800 text-sm placeholder-gray-400 focus:outline-none focus:border-cyan-400 focus:bg-white transition-all"
+        value={(formData as any)[f.key]} 
+        onChange={(e) => setFormData({ ...formData, [f.key]: e.target.value })} 
+      />
+    ))}
+    
+    <select 
+      name="service" // 👈 Explicit payload structural name for Web3Forms parsing
+      className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 text-gray-600 text-sm focus:outline-none focus:border-cyan-400 focus:bg-white transition-all cursor-pointer"
+      value={formData.service} 
+      onChange={(e) => setFormData({ ...formData, service: e.target.value })}
+    >
+      <option value="">Select Service</option>
+      {["DCS", "Energy Monitoring", "IIoT Solutions", "Instrumentation", "Electrical Design", "AMC & Training"].map(s => <option key={s}>{s}</option>)}
+    </select>
+    
+    <textarea 
+      name="message" // 👈 Explicit payload structural name for Web3Forms parsing
+      placeholder="Tell us about your project..." 
+      rows={4}
+      className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 text-gray-800 text-sm placeholder-gray-400 focus:outline-none focus:border-cyan-400 focus:bg-white transition-all resize-vertical"
+      value={formData.message} 
+      onChange={(e) => setFormData({ ...formData, message: e.target.value })} 
+    />
+    
+    <button 
+      type="submit" 
+      disabled={isSubmitting}
+      className="w-full py-3.5 rounded-xl text-white font-semibold text-sm md:text-base flex items-center justify-center gap-2 transition-all duration-300 hover:shadow-lg disabled:opacity-50"
+      style={{ background: "linear-gradient(135deg,#00d4ff,#7c3aed)", fontFamily: "'Plus Jakarta Sans',sans-serif" }}
+    >
+      {isSubmitting ? "Sending..." : "Send Message →"}
+    </button>
+  </form>
+)}
               </div>
             </FadeIn>
           </div>
