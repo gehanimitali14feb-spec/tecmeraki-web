@@ -3,26 +3,26 @@ import { motion, AnimatePresence } from "motion/react"
 
 
 // ─── ASSET IMPORTS ───
-import logoImg   from "../assets/tecmeraki-logo.png";
-import officeImg from "../assets/office.png";
-import oilgas1   from "../assets/oilgas-1.png";
-import oilgas2 from "../imports/Oil&gas_img2.png";
-import oilgas4   from "../assets/oilgas-4.png";
+import logoImg from "@/assets/tecmeraki-logo.png";
+import officeImg from "@/assets/office.png";
+import oilgas1 from "@/assets/oilgas-1.png";
+import oilgas2 from "@/assets/oilgas-2.png";
+import oilgas4 from "@/assets/oilgas-4.png";
 
 // Chemical
-import chem1 from "../imports/Chemical_img1.png";
-import chem2 from "../imports/Chemical_img2.png";
-import chem3 from "../imports/Chemical_img3.png";
+import chem1 from "@/assets/Chemical_img1.png";
+import chem2 from "@/assets/Chemical_img2.png";
+import chem3 from "@/assets/Chemical_img3.png";
 
-// Pharmaceutical
-import pharma1 from "../imports/Pharma_img1.png";
-import pharma2 from "../imports/Pharma_img2.png";
-import pharma3 from "../imports/Pharma_img3.png";
+//Pharma
+import pharma1 from "@/assets/Pharma_img1.png";
+import pharma2 from "@/assets/Pharma_img2.png";
+import pharma3 from "@/assets/Pharma_img3.png";
 
 // FMCG
-import fmcg1 from "../imports/FMCG_img01.png";
-import fmcg2 from "../imports/FMCG_img2.png";
-import fmcg3 from "../imports/FMCG_img3.png";
+import fmcg1 from "@/assets/FMCG_img01.png";
+import fmcg2 from "@/assets/FMCG_img2.png";
+import fmcg3 from "@/assets/FMCG_img3.png";
 
 // Food & Bevrage
 import food1 from "@/imports/Food&Bevrages_img01.png";
@@ -30,47 +30,47 @@ import food2 from "@/imports/Food&Bevrages_img2.png";
 import food3 from "@/imports/Food&Bevrages_img3.png";
 
 // Power & Utilities
-import power1 from "../imports/Power&Utilities_img1.png";
-import power2 from "../imports/Power&Utilities_img2.png";
-import power3 from "../imports/Power&Utilities_img3.png";
+import power1 from "@/assets/Power&Utilities_img1.png";
+import power2 from "@/assets/Power&Utilities_img2.png";
+import power3 from "@/assets/Power&Utilities_img3.png";
 
 // CPG
-import cpg1 from "../imports/CPG_img1.png";
-import cpg2 from "../imports/CPG_img2.png";
-import cpg3 from "../imports/CPG_img3.png";
+import cpg1 from "@/assets/CPG_img1.png";
+import cpg2 from "@/assets/CPG_img2.png";
+import cpg3 from "@/assets/CPG_img3.png";
 
 // DCS
-import DCS1 from "../imports/DCS_img1.png";
-import DCS2 from "../imports/DCS_img2.png";
+import DCS1 from "@/assets/DCS_img1.png";
+import DCS2 from "@/assets/DCS_img2.png";
 
-// IIoT (Fixed line 6 to say IIOt2 and pull from _img2.png)
-import IIOt1 from "../imports/IIOT_img1.png";
-import IIOt2 from "../imports/IIOT_img2.png";
+// IIoT
+import IIOt1 from "@/assets/IIOT_img1.png";
+import IIOt2 from "@/assets/IIOT_img2.png";
 
 // Electrical
-import Electrical1 from "../imports/Electrical_img01.png";
-import Electrical2 from "../imports/Electrical_img2.png";
+import Electrical1 from "@/assets/Electrical_img01.png";
+import Electrical2 from "@/assets/Electrical_img2.png";
+
 // AMC
-import AMC1 from "../imports/AMC_img1.png";
-import AMC2 from "../imports/AMC_img2.png";
+import AMC1 from "@/assets/AMC_img1.png";
+import AMC2 from "@/assets/AMC_img2.png";
 
-// Instrument (Just added the .png extension at the end)
-import Instrument1 from "../imports/Instrumentation_img1.png";
-import Instrument2 from "../imports/Instrumentation_img2.png";
+// Instrument
+import Instrument1 from "@/assets/Instrumentation_img1.png";
+import Instrument2 from "@/assets/Instrumentation_img2.png";
 
-//Energy
-import Energy1 from "../imports/Energymonitoring_img1.png";
-import Energy2 from "../imports/Energymonitorin_img2.png";
+// Energy
+import Energy1 from "@/assets/Energymonitoring_img1.png";
+import Energy2 from "@/assets/Energymonitorin_img2.png";
 
-//Industrial (Fixed the second line to say Industrial2 so it doesn't collide)
-import Industrial1 from "../imports/industrialnetwork_img1.png";
-import Industrial2 from "../imports/industrialnetwork_02.png";
+// Industrial
+import Industrial1 from "@/assets/industrialnetwork_img1.png";
+import Industrial2 from "@/assets/industrialnetwork_02.png";
 
-//Metal & Mining
-import Metal1 from "../assets/Metal_img1.png";
-import Metal2 from "../assets/Metal_img2.png";
-import Metal3 from "../assets/Metal_img3.png";
-
+// Metal & Mining
+import Metal1 from "@/assets/Metal_img1.png";
+import Metal2 from "@/assets/Metal_img2.png";
+import Metal3 from "@/assets/Metal_img3.png";
 
 /* ─── PLEXUS CANVAS ─── */
 export function PlexusCanvas({ color = "0,212,255", alpha = 0.13, count = 55 }: { color?: string; alpha?: number; count?: number }) {
