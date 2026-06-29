@@ -910,17 +910,22 @@ useEffect(() => {
     {/* Honeypot Spam Protection (Invisible to real users) */}
     <input type="checkbox" name="botcheck" className="hidden" style={{ display: "none" }} />
 
-    {[{ ph: "Your Name", key: "name", type: "text" }, { ph: "Email Address", key: "email", type: "email" }, { ph: "Company Name", key: "company", type: "text" }].map(f => (
-      <input 
-        key={f.key} 
-        type={f.type} 
-        name={f.key} // 👈 Passes proper structural name attributes dynamically
-        placeholder={f.ph}
-        className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 text-gray-800 text-sm placeholder-gray-400 focus:outline-none focus:border-cyan-400 focus:bg-white transition-all"
-        value={(formData as any)[f.key]} 
-        onChange={(e) => setFormData({ ...formData, [f.key]: e.target.value })} 
-      />
-    ))}
+    {[
+            { ph: "Your Name", key: "name", type: "text" },
+            { ph: "Email Address", key: "email", type: "email" },
+            { ph: "Mobile Number", key: "phone", type: "tel" },
+            { ph: "Company Name", key: "company", type: "text" }
+          ].map((f) => (
+            <input
+              key={f.key}
+              type={f.type}
+              name={f.key}
+              placeholder={f.ph}
+              className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 text-gray-800 text-sm placeholder-gray-400 focus:outline-none focus:border-cyan-400 focus:bg-white transition-all"
+              value={(formData as any)[f.key] || ''}
+              onChange={(e) => setFormData({ ...formData, [f.key]: e.target.value })}
+            />
+          ))}
     
     <select 
       name="service" // 👈 Explicit payload structural name for Web3Forms parsing
@@ -929,7 +934,7 @@ useEffect(() => {
       onChange={(e) => setFormData({ ...formData, service: e.target.value })}
     >
       <option value="">Select Service</option>
-      {["DCS", "Energy Monitoring", "IIoT Solutions", "Instrumentation", "Electrical Design", "AMC & Training"].map(s => <option key={s}>{s}</option>)}
+      {["DCS", "Energy Monitoring", "IIoT Solutions", "Instrumentation", "Electrical Design", "AMC & Training","Other"].map(s => <option key={s}>{s}</option>)}
     </select>
     
     <textarea 
