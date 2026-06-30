@@ -25,9 +25,9 @@ import fmcg2 from "@/imports/FMCG_img2.png";
 import fmcg3 from "@/imports/FMCG_img3.png";
 
 // Food & Bevrage
-import food1 from "@/imports/Food&Bevrages_img01.png";
-import food2 from "@/imports/Food&Bevrages_img2.png";
-import food3 from "@/imports/Food&Bevrages_img3.png";
+import food1 from "@/imports/Food01.png";
+import food2 from "@/imports/Food2.png";
+import food3 from "@/imports/Food3.png";
 
 // Power & Utilities
 import power1 from "@/imports/Power&Utilities_img1.png";
