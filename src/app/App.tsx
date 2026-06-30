@@ -13,7 +13,7 @@ const chem1 = "/imports/Chemical_img1.png";
 const chem2 = "/imports/Chemical_img2.png";
 const chem3 = "/imports/Chemical_img3.png";
 
-//Pharma
+// Pharma
 const pharma1 = "/imports/Pharma_img1.png";
 const pharma2 = "/imports/Pharma_img2.png";
 const pharma3 = "/imports/Pharma_img3.png";
@@ -23,7 +23,7 @@ const fmcg1 = "/imports/FMCG_img01.png";
 const fmcg2 = "/imports/FMCG_img2.png";
 const fmcg3 = "/imports/FMCG_img3.png";
 
-// Food & Bevrage
+// Food & Beverage
 const food1 = "/imports/Food01.png";
 const food2 = "/imports/Food2.png";
 const food3 = "/imports/Food3.png";
