@@ -30,9 +30,9 @@ import food2 from "@/imports/Food2.png";
 import food3 from "@/imports/Food3.png";
 
 // Power & Utilities
-import power1 from "@/imports/Power&Utilities_img1.png";
-import power2 from "@/imports/Power&Utilities_img2.png";
-import power3 from "@/imports/Power&Utilities_img3.png";
+import power1 from "@/imports/Power1.png";
+import power2 from "@/imports/Power2.png";
+import power3 from "@/imports/Power3.png";
 
 // CPG
 import cpg1 from "@/imports/CPG_img1.png";
@@ -44,8 +44,8 @@ import DCS1 from "@/imports/DCS_img1.png";
 import DCS2 from "@/imports/DCS_img2.png";
 
 // IIoT
-import IIOt1 from "@/imports/IIOT_img1.png";
-import IIOt2 from "@/imports/IIOT_img2.png";
+import IIOt1 from "@/imports/IIOTimg1.png";
+import IIOt2 from "@/imports/IIOTimg2.png";
 
 // Electrical
 import Electrical1 from "@/imports/Electrical_img01.png";
