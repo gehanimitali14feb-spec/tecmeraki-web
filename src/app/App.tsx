@@ -1,76 +1,75 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react"
 
-
 // ─── ASSET IMPORTS ───
-import logoImg from "@/assets/tecmeraki-logo.png";
-import officeImg from "@/assets/office.png";
-import oilgas1 from "@/assets/oilgas-1.png";
-import oilgas2 from "@/assets/oilgas-2.png";
-import oilgas4 from "@/assets/oilgas-4.png";
+const logoImg = "/assets/tecmeraki-logo.png";
+const officeImg = "/assets/office.png";
+const oilgas1 = "/assets/oilgas-1.png";
+const oilgas2 = "/assets/oilgas-2.png";
+const oilgas4 = "/assets/oilgas-4.png"; 
 
 // Chemical
-import chem1 from "@/imports/Chemical_img1.png";
-import chem2 from "@/imports/Chemical_img2.png";
-import chem3 from "@/imports/Chemical_img3.png";
+const chem1 = "/imports/Chemical_img1.png";
+const chem2 = "/imports/Chemical_img2.png";
+const chem3 = "/imports/Chemical_img3.png";
 
 //Pharma
-import pharma1 from "@/imports/Pharma_img1.png";
-import pharma2 from "@/imports/Pharma_img2.png";
-import pharma3 from "@/imports/Pharma_img3.png";
+const pharma1 = "/imports/Pharma_img1.png";
+const pharma2 = "/imports/Pharma_img2.png";
+const pharma3 = "/imports/Pharma_img3.png";
 
 // FMCG
-import fmcg1 from "@/imports/FMCG_img01.png";
-import fmcg2 from "@/imports/FMCG_img2.png";
-import fmcg3 from "@/imports/FMCG_img3.png";
+const fmcg1 = "/imports/FMCG_img01.png";
+const fmcg2 = "/imports/FMCG_img2.png";
+const fmcg3 = "/imports/FMCG_img3.png";
 
 // Food & Bevrage
-import food1 from "@/imports/Food01.png";
-import food2 from "@/imports/Food2.png";
-import food3 from "@/imports/Food3.png";
+const food1 = "/imports/Food01.png";
+const food2 = "/imports/Food2.png";
+const food3 = "/imports/Food3.png";
 
 // Power & Utilities
-import power1 from "@/imports/Power1.png";
-import power2 from "@/imports/Power2.png";
-import power3 from "@/imports/Power3.png";
+const power1 = "/imports/Power1.png";
+const power2 = "/imports/Power2.png";
+const power3 = "/imports/Power3.png";
 
 // CPG
-import cpg1 from "@/imports/CPG_img1.png";
-import cpg2 from "@/imports/CPG_img2.png";
-import cpg3 from "@/imports/CPG_img3.png";
+const cpg1 = "/imports/CPG_img1.png";
+const cpg2 = "/imports/CPG_img2.png";
+const cpg3 = "/imports/CPG_img3.png";
 
 // DCS
-import DCS1 from "@/imports/DCS_img1.png";
-import DCS2 from "@/imports/DCS_img2.png";
+const DCS1 = "/imports/DCS_img1.png";
+const DCS2 = "/imports/DCS_img2.png";
 
 // IIoT
-import IIOt1 from "@/imports/IIOTimg1.png";
-import IIOt2 from "@/imports/IIOTimg2.png";
+const IIOt1 = "/imports/IIOTimg1.png";
+const IIOt2 = "/imports/IIOTimg2.png";
 
 // Electrical
-import Electrical1 from "@/imports/Electrical_img01.png";
-import Electrical2 from "@/imports/Electrical_img2.png";
+const Electrical1 = "/imports/Electrical_img01.png";
+const Electrical2 = "/imports/Electrical_img2.png";
 
 // AMC
-import AMC1 from "@/imports/AMC_img1.png";
-import AMC2 from "@/imports/AMC_img2.png";
+const AMC1 = "/imports/AMC_img1.png";
+const AMC2 = "/imports/AMC_img2.png";
 
 // Instrument
-import Instrument1 from "@/imports/Instrumentation_img1.png";
-import Instrument2 from "@/imports/Instrumentation_img2.png";
+const Instrument1 = "/imports/Instrumentation_img1.png";
+const Instrument2 = "/imports/Instrumentation_img2.png";
 
 // Energy
-import Energy1 from "@/imports/Energymonitoring_img1.png";
-import Energy2 from "@/imports/Energymonitorin_img2.png";
+const Energy1 = "/imports/Energymonitoring_img1.png";
+const Energy2 = "/imports/Energymonitorin_img2.png";
 
 // Industrial
-import Industrial1 from "@/imports/industrialnetwork_img1.png";
-import Industrial2 from "@/imports/industrialnetwork_02.png";
+const Industrial1 = "/imports/industrialnetwork_img1.png";
+const Industrial2 = "/imports/industrialnetwork_02.png";
 
 // Metal & Mining
-import Metal1 from "@/assets/Metal_img1.png";
-import Metal2 from "@/assets/Metal_img2.png";
-import Metal3 from "@/assets/Metal_img3.png";
+const Metal1 = "/assets/Metal_img1.png";
+const Metal2 = "/assets/Metal_img2.png";
+const Metal3 = "/assets/Metal_img3.png";
 
 /* ─── PLEXUS CANVAS ─── */
 export function PlexusCanvas({ color = "0,212,255", alpha = 0.13, count = 55 }: { color?: string; alpha?: number; count?: number }) {
