@@ -855,7 +855,7 @@ useEffect(() => {
               <div>
                 <div className="text-xs font-bold tracking-widest text-cyan-600 uppercase mb-3">Contact Us</div>
                 <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 mb-6 leading-tight" style={{ fontFamily: "'Plus Jakarta Sans',sans-serif" }}>
-                  Let's Build <span style={{ color: "#00b8d9" }}>Smarter</span> Together
+                  Let's Build <span style={{ color: "#00b8d9" }}>Smarter</span> Industries Together
                 </h2>
                 <p className="text-gray-500 text-sm md:text-base leading-relaxed mb-8">Whether you're planning a new automation project, upgrading an existing system, or exploring Industry 4.0 opportunities, our team is ready to help.</p>
                 <div className="flex flex-col gap-5">
