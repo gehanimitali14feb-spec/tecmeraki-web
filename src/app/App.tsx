@@ -39,7 +39,7 @@ const cpg2 = "/imports/CPG_img2.png";
 const cpg3 = "/imports/CPG_img3.png";
 
 // DCS
-const DCS1 = "/imports/DCS_img1.png";
+const DCS1 = "/imports/DCS_final_1.png";
 const DCS2 = "/imports/DCS_img2.png";
 
 // IIoT
